@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-interface SquareComponentPropsInterface {
+interface SquarePropsInterface {
   value: number;
 }
 
@@ -11,10 +11,10 @@ interface SquareStatusInterface {
 }
 
 class Square extends React.Component<
-  SquareComponentPropsInterface,
+  SquarePropsInterface,
   SquareStatusInterface
 > {
-  constructor(props: SquareComponentPropsInterface) {
+  constructor(props: SquarePropsInterface) {
     super(props);
     this.state = {
       value: "",
