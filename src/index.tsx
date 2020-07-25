@@ -1,14 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 
 interface SquareComponentPropsInterface {
-    value: number
+  value: number;
 }
 class Square extends React.Component<SquareComponentPropsInterface> {
   render() {
-    return <button className="square">
-        {this.props.value}</button>;
+    return (
+      <button
+        className="square"
+        onClick={() => {
+          alert("click");
+        }}
+      >
+        {this.props.value}
+      </button>
+    );
   }
 }
 
