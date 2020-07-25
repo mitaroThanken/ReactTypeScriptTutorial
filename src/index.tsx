@@ -16,7 +16,7 @@ function Square(props: SquarePropsInterface) {
 }
 
 interface BoardPropsInterface {
-  squares: Array<string>;
+  squares: string[];
   xIsNext: boolean;
   winner: string;
   onClick: (i: number) => void;
@@ -60,7 +60,7 @@ class Board extends React.Component<BoardPropsInterface> {
 interface GamePropsInterface {}
 
 interface GameStateInterface {
-  history: Array<Array<string>>;
+  history: string[][];
   xIsNext: boolean;
   winner: string;
 }
@@ -75,7 +75,7 @@ class Game extends React.Component<GamePropsInterface, GameStateInterface> {
     };
   }
 
-  calculateWinner(squares: Array<string>): string {
+  calculateWinner(squares: string[]): string {
     const lines = [
       [0, 1, 2],
       [3, 4, 5],
