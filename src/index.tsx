@@ -123,10 +123,34 @@ class Game extends React.Component<GamePropsInterface, GameStateInterface> {
     });
   }
 
+  junpTo(index: number) {
+    const newHistory = this.state.history.slice(0, index + 1);
+    const xIsNext = index % 2 == 0 ? true : false;
+    this.setState({
+      history: newHistory,
+      xIsNext: xIsNext,
+      winner: this.calculateWinner(newHistory[index]),
+    });
+  }
+
   render() {
-    const history = this.state.history;
-    const current = this.state.history[this.state.history.length - 1];
+    const history = this.state.history.slice();
+    const current = history[history.length - 1];
     const status = this.currentStatus(this.state.xIsNext, this.state.winner);
+    const moves = history.map((sqares, index) => {
+      const desc = index !== 0 ? "Go to #" + (index + 1) : "Go to game start";
+      return (
+        <li key={index}>
+          <button
+            onClick={() => {
+              this.junpTo(index);
+            }}
+          >
+            {desc}
+          </button>
+        </li>
+      );
+    });
 
     return (
       <div className="game">
@@ -140,7 +164,7 @@ class Game extends React.Component<GamePropsInterface, GameStateInterface> {
         </div>
         <div className="game-info">
           <div>{status}</div>
-          <ol>{/* TODO */}</ol>
+          <ol>{moves}</ol>
         </div>
       </div>
     );
