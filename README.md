@@ -1,3 +1,9 @@
+# [Tutorial: Intro to React](https://reactjs.org/tutorial/tutorial.html) を TypeScript でやってみた
+
+以降、[Create React App](https://github.com/facebook/create-react-app) で生成された内容のまま。
+
+-----
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
