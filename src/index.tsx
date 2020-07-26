@@ -125,7 +125,7 @@ class Game extends React.Component<GamePropsInterface, GameStateInterface> {
 
   junpTo(index: number) {
     const newHistory = this.state.history.slice(0, index + 1);
-    const xIsNext = index % 2 == 0 ? true : false;
+    const xIsNext = index % 2 === 0 ? true : false;
     this.setState({
       history: newHistory,
       xIsNext: xIsNext,
